@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\controllers\global_mapper.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\controllers\option_manager.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\controllers\rotation_averager.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\controllers\track_establishment.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\controllers\track_retriangulation.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\bundle_adjustment.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\global_positioning.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\global_rotation_averaging.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\gravity_refinement.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\relpose_estimation.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\rotation_initializer.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\MAC\solvers\mac.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\MAC\utils\graph_utils.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\view_graph_calibration.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\io\colmap_converter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\io\colmap_io.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\io\pose_io.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\math\gravity.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\math\rigid3d.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\math\tree.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\math\two_view_geometry.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\image_pair_inliers.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\image_undistorter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\reconstruction_normalizer.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\reconstruction_pruning.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\relpose_filter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\track_filter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\view_graph_manipulation.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\scene\view_graph.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\controllers\global_mapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\controllers\option_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\controllers\rotation_averager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\controllers\track_establishment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\controllers\track_retriangulation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\bundle_adjustment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\cost_function.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\global_positioning.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\global_rotation_averaging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\gravity_refinement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\optimization_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\relpose_estimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\rotation_initializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\view_graph_calibration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\MAC\optimization\frankwolfe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\MAC\solvers\mac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\MAC\utils\constraints.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\MAC\utils\graph_utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\estimators\MAC\utils\rounding.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\io\colmap_converter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\io\colmap_io.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\io\pose_io.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\math\gravity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\math\rigid3d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\math\tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\math\two_view_geometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\image_pair_inliers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\image_undistorter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\reconstruction_normalizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\reconstruction_pruning.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\relpose_filter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\track_filter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\processors\view_graph_manipulation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\scene\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\scene\frame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\scene\image_pair.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\scene\image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\scene\track.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\scene\types_sfm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\scene\types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{F0D1439F-7839-3A3F-821A-D1C7696B3C1B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9FC3724F-646F-3C39-A697-2B293F544DFE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

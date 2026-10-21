@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\build\CMakeFiles\40d513a44938e916c3ee675114509fd1\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{36728B22-9AE2-3F6D-AA20-E504C3B17ED5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

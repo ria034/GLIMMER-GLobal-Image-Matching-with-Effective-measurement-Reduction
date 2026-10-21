@@ -3,13 +3,19 @@
 #include "glomap/controllers/option_manager.h"
 #include "glomap/io/colmap_io.h"
 #include "glomap/io/pose_io.h"
-#include "glomap/types.h"
+
 
 #include <colmap/util/file.h>
 #include <colmap/util/misc.h>
 #include <colmap/util/timer.h>
 
 namespace glomap {
+
+void RunMacViewGraphSparsification(
+    ViewGraph& view_graph,
+    const std::unordered_map<image_t, Image>& images,
+    double retention_ratio);
+
 // -------------------------------------
 // Mappers starting from COLMAP database
 // -------------------------------------
@@ -52,7 +58,7 @@ int RunMapper(int argc, char** argv) {
     options.mapper->opt_gp.constraint_type =
         GlobalPositionerOptions::POINTS_AND_CAMERAS;
   } else {
-    LOG(ERROR) << "Invalid constriant type";
+    LOG(ERROR) << "Invalid constraint type";
     return EXIT_FAILURE;
   }
 
@@ -77,6 +83,10 @@ int RunMapper(int argc, char** argv) {
     LOG(ERROR) << "Can't continue without image pairs";
     return EXIT_FAILURE;
   }
+
+  // --- Run MAC View Graph Sparsification ---
+  LOG(INFO) << "Running MAC view graph sparsification...";
+  RunMacViewGraphSparsification(view_graph, images, 0.5);
 
   GlobalMapper global_mapper(*options.mapper);
 
@@ -145,6 +155,10 @@ int RunMapperResume(int argc, char** argv) {
   colmap::Reconstruction reconstruction;
   reconstruction.Read(input_path);
   ConvertColmapToGlomap(reconstruction, rigs, cameras, frames, images, tracks);
+
+  // --- Run MAC View Graph Sparsification (Resume) ---
+  LOG(INFO) << "Running MAC view graph sparsification (resume)...";
+  RunMacViewGraphSparsification(view_graph, images, 0.5);
 
   GlobalMapper global_mapper(*options.mapper);
 

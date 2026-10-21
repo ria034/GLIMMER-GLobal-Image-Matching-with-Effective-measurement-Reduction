@@ -14,7 +14,7 @@ struct BundleAdjusterOptions : public OptimizationBaseOptions {
   // Flags for which parameters to optimize
   bool optimize_rig_poses = false;  // Whether to optimize the rig poses
   bool optimize_rotations = true;
-  bool optimize_translation = true;
+  bool optimize_translation = true;              
   bool optimize_intrinsics = true;
   bool optimize_principal_point = false;
   bool optimize_points = true;

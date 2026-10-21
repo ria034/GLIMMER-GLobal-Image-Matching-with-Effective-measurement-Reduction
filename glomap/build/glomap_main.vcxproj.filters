@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\glomap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\exe\global_mapper.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\exe\rotation_averager.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\exe\global_mapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\exe\rotation_averager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lenovo\Desktop\repos\GLIMMER-GLobal-Image-Matching-with-Effective-measurement-Reduction\glomap\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{F0D1439F-7839-3A3F-821A-D1C7696B3C1B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9FC3724F-646F-3C39-A697-2B293F544DFE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

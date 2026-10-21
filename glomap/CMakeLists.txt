@@ -1,3 +1,4 @@
+
 set(SOURCES
     controllers/global_mapper.cc
     controllers/option_manager.cc
@@ -10,6 +11,8 @@ set(SOURCES
     estimators/gravity_refinement.cc
     estimators/relpose_estimation.cc
     estimators/rotation_initializer.cc
+    estimators/MAC/solvers/mac.cc
+    estimators/MAC/utils/graph_utils.cc
     estimators/view_graph_calibration.cc
     io/colmap_converter.cc
     io/colmap_io.cc
@@ -43,6 +46,11 @@ set(HEADERS
     estimators/relpose_estimation.h
     estimators/rotation_initializer.h
     estimators/view_graph_calibration.h
+    estimators/MAC/optimization/frankwolfe.h
+    estimators/MAC/solvers/mac.h
+    estimators/MAC/utils/constraints.h
+    estimators/MAC/utils/graph_utils.h
+    estimators/MAC/utils/rounding.h
     io/colmap_converter.h
     io/colmap_io.h
     io/pose_io.h
