@@ -1,20 +1,15 @@
 #include "glomap/controllers/global_mapper.h"
 
 #include "glomap/controllers/option_manager.h"
+#include "glomap/estimators/MAC/solvers/mac.h"
 #include "glomap/io/colmap_io.h"
 #include "glomap/io/pose_io.h"
-
 
 #include <colmap/util/file.h>
 #include <colmap/util/misc.h>
 #include <colmap/util/timer.h>
 
 namespace glomap {
-
-void RunMacViewGraphSparsification(
-    ViewGraph& view_graph,
-    const std::unordered_map<image_t, Image>& images,
-    double retention_ratio);
 
 // -------------------------------------
 // Mappers starting from COLMAP database
@@ -27,6 +22,12 @@ int RunMapper(int argc, char** argv) {
   std::string constraint_type = "ONLY_POINTS";
   std::string output_format = "bin";
 
+  // MAC options
+  bool mac_enable = true;
+  double mac_retention_ratio = 0.5;
+  bool mac_use_odometry = true;
+  int mac_max_iterations = 20;
+
   OptionManager options;
   options.AddRequiredOption("database_path", &database_path);
   options.AddRequiredOption("output_path", &output_path);
@@ -36,6 +37,10 @@ int RunMapper(int argc, char** argv) {
                            "{ONLY_POINTS, ONLY_CAMERAS, "
                            "POINTS_AND_CAMERAS_BALANCED, POINTS_AND_CAMERAS}");
   options.AddDefaultOption("output_format", &output_format, "{bin, txt}");
+  options.AddDefaultOption("mac_enable", &mac_enable);
+  options.AddDefaultOption("mac_retention_ratio", &mac_retention_ratio);
+  options.AddDefaultOption("mac_use_odometry", &mac_use_odometry);
+  options.AddDefaultOption("mac_max_iterations", &mac_max_iterations);
   options.AddGlobalMapperFullOptions();
 
   options.Parse(argc, argv);
@@ -62,9 +67,13 @@ int RunMapper(int argc, char** argv) {
     return EXIT_FAILURE;
   }
 
-  // Check whether output_format is valid
   if (output_format != "bin" && output_format != "txt") {
     LOG(ERROR) << "Invalid output format";
+    return EXIT_FAILURE;
+  }
+
+  if (mac_retention_ratio < 0.0 || mac_retention_ratio > 1.0) {
+    LOG(ERROR) << "`mac_retention_ratio` must be in [0, 1]";
     return EXIT_FAILURE;
   }
 
@@ -83,21 +92,63 @@ int RunMapper(int argc, char** argv) {
     LOG(ERROR) << "Can't continue without image pairs";
     return EXIT_FAILURE;
   }
-
-  // --- Run MAC View Graph Sparsification ---
-  LOG(INFO) << "Running MAC view graph sparsification...";
-  RunMacViewGraphSparsification(view_graph, images, 0.5);
-
-  GlobalMapper global_mapper(*options.mapper);
-
-  // Main solver
   LOG(INFO) << "Loaded database";
+
   colmap::Timer run_timer;
   run_timer.Start();
-  global_mapper.Solve(
-      *database, view_graph, rigs, cameras, frames, images, tracks);
-  run_timer.Pause();
 
+  if (!mac_enable) {
+    // Plain glomap (baseline).
+    GlobalMapper global_mapper(*options.mapper);
+    global_mapper.Solve(
+        *database, view_graph, rigs, cameras, frames, images, tracks);
+  } else {
+    // ------------------------------------------------------------------
+    // Step 1: build the graph. Relative poses + glomap's inlier filter on
+    //         ALL pairs. Identical for every budget.
+    // ------------------------------------------------------------------
+    GlobalMapperOptions build_graph = *options.mapper;
+    build_graph.skip_rotation_averaging = true;
+    build_graph.skip_track_establishment = true;
+    build_graph.skip_global_positioning = true;
+    build_graph.skip_bundle_adjustment = true;
+    build_graph.skip_retriangulation = true;
+    build_graph.skip_pruning = true;
+    LOG(INFO) << "Step 1: building the graph (relative poses + inlier filter)";
+    {
+      GlobalMapper mapper(build_graph);
+      mapper.Solve(
+          *database, view_graph, rigs, cameras, frames, images, tracks);
+    }
+
+    // ------------------------------------------------------------------
+    // Steps 2-3: backbone + MAC (see mac.cc). Only MAC uses the budget.
+    // ------------------------------------------------------------------
+    MacOptions mac_options;
+    mac_options.retention_ratio = mac_retention_ratio;
+    mac_options.use_odometry_backbone = mac_use_odometry;
+    mac_options.max_iterations = mac_max_iterations;
+
+    LOG(INFO) << "Steps 2-3: backbone + MAC";
+    colmap::Timer mac_timer;
+    mac_timer.Start();
+    RunMacViewGraphSparsification(view_graph, images, mac_options);
+    mac_timer.Pause();
+    LOG(INFO) << "MAC done in " << mac_timer.ElapsedSeconds() << " seconds";
+
+    // ------------------------------------------------------------------
+    // Step 4: rest of glomap on the sparsified graph.
+    // ------------------------------------------------------------------
+    GlobalMapperOptions rest = *options.mapper;
+    rest.skip_preprocessing = true;
+    rest.skip_view_graph_calibration = true;
+    rest.skip_relative_pose_estimation = true;
+    LOG(INFO) << "Step 4: rotation averaging onwards (sparsified graph)";
+    GlobalMapper mapper(rest);
+    mapper.Solve(*database, view_graph, rigs, cameras, frames, images, tracks);
+  }
+
+  run_timer.Pause();
   LOG(INFO) << "Reconstruction done in " << run_timer.ElapsedSeconds()
             << " seconds";
 
@@ -137,7 +188,6 @@ int RunMapperResume(int argc, char** argv) {
     return EXIT_FAILURE;
   }
 
-  // Check whether output_format is valid
   if (output_format != "bin" && output_format != "txt") {
     LOG(ERROR) << "Invalid output format";
     return EXIT_FAILURE;
@@ -156,13 +206,10 @@ int RunMapperResume(int argc, char** argv) {
   reconstruction.Read(input_path);
   ConvertColmapToGlomap(reconstruction, rigs, cameras, frames, images, tracks);
 
-  // --- Run MAC View Graph Sparsification (Resume) ---
-  LOG(INFO) << "Running MAC view graph sparsification (resume)...";
-  RunMacViewGraphSparsification(view_graph, images, 0.5);
+  // MAC is not run here: in resume mode the view graph is an empty dummy.
 
   GlobalMapper global_mapper(*options.mapper);
 
-  // Main solver
   colmap::Timer run_timer;
   run_timer.Start();
   global_mapper.Solve(
